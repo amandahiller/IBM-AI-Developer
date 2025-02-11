@@ -1,4 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from flask import request
+import json
 
 model_name = "facebook/blenderbot-400M-distill"
 
@@ -9,7 +11,13 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 #Keeping track of conversation history
 conversation_history = []
 
-while True: 
+@app.route('/chatbot', methods=['POST'])
+def handle_prompt():
+    # Read prompt from HTTP request body
+    data = request.get_data(as_text=True)
+    data = json.loads(data)
+    input_text = data['prompt']
+    
     #Encoding the conversation history
     history_string = "\n".join(conversation_history)
 
