@@ -16,3 +16,6 @@ inputs = tokenizer.encode_plus(history_string, input_text, return_tensors="pt")
 print(inputs)
 
 tokenizer.pretrained_vocab_files_map
+
+outputs = model.generate(**inputs)
+print(outputs)
