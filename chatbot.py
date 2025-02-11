@@ -32,5 +32,3 @@ while True:
     #Update conversation history
     conversation_history.append(input_text)
     conversation_history.append(response)
-
-print(conversation_history)
