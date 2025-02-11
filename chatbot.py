@@ -14,16 +14,13 @@ while True:
     history_string = "\n".join(conversation_history)
 
     #Fetch prompt from user
-    input_text ="hello, how are you doing?"
+    input_text = input("> ")
 
     #Tokenization of user prompt and chat history
     inputs = tokenizer.encode_plus(history_string, input_text, return_tensors="pt")
-    print(inputs)
-    tokenizer.pretrained_vocab_files_map
 
     #Generate output from the model
     outputs = model.generate(**inputs)
-    print(outputs)
 
     #Decode output
     response = tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
