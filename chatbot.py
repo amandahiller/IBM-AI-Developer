@@ -7,3 +7,5 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
 conversation_history = []
+
+history_string = "\n".join(conversation_history)
