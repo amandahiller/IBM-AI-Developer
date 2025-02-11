@@ -9,3 +9,5 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 conversation_history = []
 
 history_string = "\n".join(conversation_history)
+
+input_text ="hello, how are you doing?"
