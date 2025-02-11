@@ -33,6 +33,7 @@ python3 chatbot.py
 <b>Install Flask</b>:
 
 python3.11 -m pip install flask
+
 python3.11 -m pip install flask_cors
 
 
