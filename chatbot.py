@@ -11,3 +11,6 @@ conversation_history = []
 history_string = "\n".join(conversation_history)
 
 input_text ="hello, how are you doing?"
+
+inputs = tokenizer.encode_plus(history_string, input_text, return_tensors="pt")
+print(inputs)
